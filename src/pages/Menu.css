@@ -1,0 +1,29 @@
+.menuWrapper {
+    background-color: #231841;
+    height: 100vh;
+    width: 100vw;
+}
+
+.menuItems {
+    list-style-type: none;
+    font-size: 10rem;
+    padding: 3rem;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+a {
+    display: block;
+    margin: 3rem;
+    color: #F375A0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+img {
+    position: absolute;
+    left: 40%;
+    top: 5%;
+}

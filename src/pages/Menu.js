@@ -1,6 +1,9 @@
 import { React, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import './Menu.css'
+import postMalone from '../images/postMalone.png'
+
 
 
 const getReturnedParamsFromSpotifyAuth = (hash) => {
@@ -30,10 +33,13 @@ function Menu() {
         }
     });
     return (
+        <div className="menuWrapper">
         <div className="menuItems">
-                <Link to="/insights"><li>Insights</ li></Link>
-                <Link to="/topTracks"><li>Top Tracks</ li></Link>
-                <Link to="/topArtists"><li>Top Artists</ li></Link>
+                <Link to="/insights">INSIGHTS</Link>
+                <Link to="/topTracks">TOP TRACKS</Link>
+                <Link to="/topArtists">TOP ARTISTS</Link>
+        </div>
+        <img src={postMalone} alt="Post Malone"></img>
         </div>
     );
 }
