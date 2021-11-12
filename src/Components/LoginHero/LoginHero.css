@@ -4,7 +4,7 @@
 }
 
 .header {
-    font-size: 20rem;
+    font-size: 15vw;
     text-align: left;
     margin: 2rem;
     z-index: 1;
@@ -16,8 +16,8 @@
 }
 
 .background-circle-small {
-    width: 5rem;
-    height: 5rem;
+    width: 5vw;
+    height: 5vw;
     position: absolute;
     top: 25%;
     left: 40%;
@@ -26,18 +26,19 @@
 }
 
 .background-circle-medium {
-    width: 25rem;
-    height: 25rem;
+    width: 25vw;
+    height: 25vw;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 5%;
     background-color: #1DB954;
     border-radius: 100%;
+    z-index: -1;
 }
 
 .background-circle-large {
-    height: 70rem;
-    width: 70rem;
+    height: 70vw;
+    width: 70vw;
     position: absolute;
     top: 20%;
     left: 75%;

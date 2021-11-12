@@ -1,0 +1,22 @@
+.loginButton {
+    font-family: Helvetica, Arial, sans-serif;;
+    color: seashell;
+    border-radius: 10rem;
+    background: #34D564;
+    box-shadow: 20px 20px 60px #807f7f, -20px -20px 60px #ffffff;
+    height: 7rem;
+    width: 30rem;
+    border-style: none;
+    font-size: 2rem;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttonWrapper {
+    position: relative;
+    height: 70vh;
+    width: 100vw;
+}
