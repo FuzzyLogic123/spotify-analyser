@@ -1,0 +1,13 @@
+body {
+    background-image: url('../spotify-background.svg');
+}
+
+.header {
+    font-size: 20rem;
+    text-align: left;
+    margin: 2rem;
+}
+
+.headerWrapper {
+    width: 100%;
+}
