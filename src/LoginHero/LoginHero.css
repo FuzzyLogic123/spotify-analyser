@@ -1,13 +1,54 @@
-body {
-    background-image: url('../spotify-background.svg');
+.heroWrapper {
+    height: 100vh;
+    width: 100vw;
 }
 
 .header {
     font-size: 20rem;
     text-align: left;
     margin: 2rem;
+    z-index: 1;
 }
 
 .headerWrapper {
     width: 100%;
+    z-index: 1;
+}
+
+.background-circle-small {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    background-color: #34D564;
+    border-radius: 100%;
+}
+
+.background-circle-medium {
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #1DB954;
+    border-radius: 100%;
+}
+
+.background-circle-large {
+    height: 70rem;
+    width: 70rem;
+    position: absolute;
+    top: 20%;
+    left: 75%;
+    background-color: #28c25e;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.arrow {
+    position: absolute;
+    left: 30%;
+    text-align: center;
+    font-size: 7rem;
 }
