@@ -1,0 +1,23 @@
+.prompt {
+    font-weight: 800;
+    padding: 5rem;
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+}
+
+.result {
+    margin: 5rem;
+    font-size: 10vw;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.obscurePrompt {
+    color: yellowgreen;
+    font-size: 5vw;
+}
+
+.obscureResult {
+    color: yellowgreen;
+}

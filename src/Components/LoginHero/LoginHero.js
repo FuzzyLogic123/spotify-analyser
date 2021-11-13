@@ -1,5 +1,6 @@
 import React from 'react';
-import { IoIosArrowDown as Arrow } from 'react-icons/io'
+import { IoIosArrowDown as Arrow } from 'react-icons/io';
+import './LoginHero.css';
 
 function LoginHero() {
     return ( 

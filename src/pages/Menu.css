@@ -1,3 +1,7 @@
+body {
+    overflow-y: none;
+}
+
 .menuWrapper {
     background-color: #231841;
     height: 100vh;
@@ -26,4 +30,5 @@ img {
     position: absolute;
     left: 40%;
     top: 5%;
+    max-height: 90vh;
 }
