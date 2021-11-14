@@ -1,4 +1,5 @@
 .prompt {
+    color: white;
     font-weight: 800;
     padding: 5rem;
     width: 100%;
@@ -7,6 +8,7 @@
 }
 
 .result {
+    color: white;
     margin: 5rem;
     font-size: 10vw;
     font-weight: 900;
@@ -20,4 +22,15 @@
 
 .obscureResult {
     color: yellowgreen;
+}
+
+.asterisk {
+    margin: 5rem;
+}
+
+.home {
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    background: transparent;
 }

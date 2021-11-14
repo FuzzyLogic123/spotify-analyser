@@ -3,7 +3,7 @@
     color: seashell;
     border-radius: 10rem;
     background: #34D564;
-    box-shadow: 20px 20px 60px #807f7f, -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #bdbdbd, -20px -20px 60px #ffffff;
     height: 7rem;
     width: 30rem;
     border-style: none;
@@ -19,4 +19,10 @@
     position: relative;
     height: 70vh;
     width: 100vw;
+}
+
+.loginButton:hover {
+    box-shadow: 20px 20px 60px #807f7f, -20px -20px 60px #ffffff;
+    height: 7.1rem;
+    width: 30.5rem;
 }

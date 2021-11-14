@@ -1,0 +1,25 @@
+.navBar {
+    padding: 2rem;
+    color: black;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 2rem;
+}
+
+.link {
+    display: block;
+    margin: 3rem;
+    color: #F375A0;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 0.25rem;
+}
