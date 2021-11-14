@@ -1,0 +1,23 @@
+.songsContainer {
+    position: relative;
+    padding: 3rem;
+    border-radius: 3rem;
+    width: 50vw;
+    display: inline-block;
+}
+
+.trackContent {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    width: 30vw;
+    font-size: 7vw;
+}
+
+.text {
+    margin: 0;
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -100%);
+}

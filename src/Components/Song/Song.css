@@ -1,0 +1,54 @@
+.songContainer {
+    font-family: Rubik, sans-serif;
+    /* box-shadow: 20px 20px 60px #cecece, -20px -20px 60px #ffffff00; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 20vw;
+    min-width: 25rem;
+    margin: auto;
+    margin-top: 0rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* border-radius: 1rem; */
+    background-color: white;
+}
+
+.songContainer:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.infoWrapper {
+    text-align: left;
+}
+
+.songName {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: #3a354e;
+}
+
+.artistName {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #50496d;
+}
+
+.albumCover {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 15px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.index {
+    color: grey;
+    padding: 0.25rem;
+    width: 1.5rem;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './DisplayInfo.css';
 
-function InfoDisplay( { children, backgroundColor, image}) {
+function DisplayInfoRight( { children, backgroundColor, image}) {
     return ( 
         <div style={{ backgroundColor}}>
         <div className='imageWrapper'>
@@ -14,4 +14,4 @@ function InfoDisplay( { children, backgroundColor, image}) {
      );
 }
 
-export default InfoDisplay;
+export default DisplayInfoRight;

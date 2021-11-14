@@ -3,7 +3,7 @@ body {
 }
 
 .menuWrapper {
-    background-color: #231841;
+    background-color: #000000;
     height: 100vh;
     width: 100vw;
 }
@@ -18,10 +18,10 @@ body {
     transform: translate(0, -50%);
 }
 
-a {
+.menuItem {
     display: block;
     margin: 3rem;
-    color: #F375A0;
+    color: #77D970;
     font-weight: 700;
     text-decoration: none;
 }

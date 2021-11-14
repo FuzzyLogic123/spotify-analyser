@@ -2,7 +2,6 @@ import { React, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Menu.css'
-import postMalone from '../images/postMalone.png'
 
 
 
@@ -35,11 +34,10 @@ function Menu() {
     return (
         <div className="menuWrapper">
         <div className="menuItems">
-                <Link to="/insights">INSIGHTS</Link>
-                <Link to="/topTracks">TOP TRACKS</Link>
-                <Link to="/topArtists">TOP ARTISTS</Link>
+                <Link className='menuItem' to="/insights">INSIGHTS</Link>
+                <Link className='menuItem' to="/topTracks">TOP TRACKS</Link>
+                <Link className='menuItem' to="/topArtists">TOP ARTISTS</Link>
         </div>
-        <img src={postMalone} alt="Post Malone"></img>
         </div>
     );
 }
