@@ -52,34 +52,40 @@ function Insights() {
                 : <>
                     <NavBar backgroundColor={'#FBE7C6'} textColor={'white'} />
                     <DisplayInfo backgroundColor={'#FBE7C6'} image={artistData[0].images[0].url}>
-                        <h1 className="prompt">Your top Artist is</h1>
+                        <h1 className="prompt">Top Artist</h1>
                         <h1 className='result'>{artistData[0].name}</h1>
                     </DisplayInfo>
 
                     <DisplayInfoRight backgroundColor={'#B4F8C8'} image={trackData[0].album.images[0].url}>
-                        <h1 className="prompt">Your top Track is</h1>
-                        <h1 className='result'>{`${trackData[0].name} by ${trackData[0].artists[0].name}`}</h1>
+                        <h1 className="prompt">Top Track</h1>
+                        <h1 className='result'>
+                            {trackData[0].name}
+                            <br />
+                            {trackData[0].artists[0].name}
+                        </h1>
                     </DisplayInfoRight>
 
                     <DisplayInfo backgroundColor={'#A0E7E5'} image={popArtist.url}>
-                        <h1 className="prompt">The most mainstream Artist in your top 20 is</h1>
+                        <h1 className="prompt">Most mainstream Artist</h1>
                         <h1 className='result'>{popArtist.name}</h1>
                     </DisplayInfo>
 
                     <DisplayInfoRight backgroundColor={'#FFAEBC'} image={obscureArtist.url}>
-                        <h1 className="prompt">The most obscure Artist in your top 20 is</h1>
+                        <h1 className="prompt">Most obscure Artist</h1>
                         <h1 className='result'>{obscureArtist.name}</h1>
                     </DisplayInfoRight>
 
-                    <div style={{ backgroundColor: 'black', position: 'relative' }}>
-                        <div style={{ display: 'inline-block' }}>
-                            <h1 className='obscurePrompt prompt'>Your Obsurity Rating is*</h1>
+                    <div className="flexContainer" style={{ backgroundColor: 'black', position: 'relative' , height: '50vh'}}>
+                        <div className="flexChild flexContainerCentered">
+                            <div>
+                                <h1 className='obscurePrompt prompt'>Obsurity Rating*</h1>
+                                <h4 className='obscureResult'>*based on the popularity of your top 20 artists. Higher is more obscure</h4>
+                            </div>
                         </div>
-                        <div style={{ display: 'inline-block' }}>
+                        <div className="flexChild flexContainerCentered">
                             <h1 className='obscureResult result'>
                                 {`${(100 - obscurityRating).toFixed(2)}%`}
                             </h1>
-                            <h4 className='obscureResult asterisk'>*based on the popularity of your top 20 artists <br /> Higher is more obscure</h4>
                         </div>
                     </div>
                 </>}

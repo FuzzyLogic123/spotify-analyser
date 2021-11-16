@@ -25,10 +25,3 @@ body {
     font-weight: 700;
     text-decoration: none;
 }
-
-img {
-    position: absolute;
-    left: 40%;
-    top: 5%;
-    max-height: 90vh;
-}

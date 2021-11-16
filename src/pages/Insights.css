@@ -1,18 +1,15 @@
 .prompt {
     color: white;
     font-weight: 800;
-    padding: 5rem;
-    width: 100%;
+    font-size: 5rem;
     margin: 0;
-    display: inline-block;
 }
 
 .result {
     color: white;
-    margin: 5rem;
     font-size: 10vw;
     font-weight: 900;
-    display: inline-block;
+    margin: 0;
 }
 
 .obscurePrompt {
@@ -22,10 +19,6 @@
 
 .obscureResult {
     color: yellowgreen;
-}
-
-.asterisk {
-    margin: 5rem;
 }
 
 .home {

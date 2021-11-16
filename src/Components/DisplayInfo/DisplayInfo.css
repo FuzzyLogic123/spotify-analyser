@@ -1,24 +1,29 @@
-.content {
-    position: relative;
-    margin: 0;
-    font-weight: 600;
-    width: 50vw;
-    display: inline-block;
+.flexContainer {
+    display: flex;
 }
 
-img {
-    position: relative;
-    top: 0;
-    left: 0;
+.flexContainerCentered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexChild {
+    flex: 1;
+    text-align: center;
+}
+
+.flexChild:first-child {
+    margin-right: 20px;
+}
+
+.image {
+    max-width: 100%;
     max-height: 100%;
-    border-radius: 1rem;
-    max-width: 20vw;
+    position: relative;
+    margin: 3rem;
 }
 
-.imageWrapper {
-    display: inline-block;
-    position: relative;
-    padding: 0;
-    margin: 10rem;
-    width: 30vw;
+.segment {
+    height: 80vh;
 }

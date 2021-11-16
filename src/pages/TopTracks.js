@@ -69,29 +69,35 @@ function TopTracks() {
                 :
                 <>
                     <NavBar backgroundColor={'khaki'} />
-                    <div style={{ backgroundColor: 'khaki', padding: '5rem' }}>
-                        <div className='trackContent'>
-                            <h1 className='text'>All Time</h1>
+                    <div className='flexContainer' style={{ backgroundColor: 'khaki' }}>
+                        <div className='flexChild trackContent flexContainerCentered'>
+                            <h1>All Time</h1>
                         </div>
-                        <div className='songsContainer'>
-                            {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                        <div className='flexChild flexContainerCentered'>
+                            <div className='songsContainer'>
+                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                            </div>
                         </div>
                     </ div>
 
-                    <div style={{ backgroundColor: 'yellowgreen', padding: '5rem' }}>
-                        <div className='songsContainer'>
-                            {trackData.mediumTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                    <div className='flexContainer' style={{ backgroundColor: 'yellowgreen' }}>
+                        <div className='flexChild flexContainerCentered'>
+                            <div className='songsContainer'>
+                                {trackData.mediumTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                            </div>
                         </div>
-                        <div className='trackContent'>
-                            <h1 className='text'>hapen soon</h1>
+                        <div className='flexChild trackContent flexContainerCentered'>
+                            <h1>Medium Term</h1>
                         </div>
                     </ div>
-                    <div style={{ backgroundColor: 'cadetblue', padding: '5rem' }}>
-                        <div className='trackContent'>
-                            <h1 className='text'>Short Term</h1>
+                    <div className='flexContainer' style={{ backgroundColor: 'cadetblue' }}>
+                        <div className='flexChild trackContent flexContainerCentered'>
+                            <h1>Long Term</h1>
                         </div>
-                        <div className='songsContainer'>
-                            {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                        <div className='flexChild flexContainerCentered'>
+                            <div className='songsContainer'>
+                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                            </div>
                         </div>
                     </ div>
                 </>

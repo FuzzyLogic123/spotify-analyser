@@ -3,12 +3,14 @@ import './DisplayInfo.css';
 
 function DisplayInfo({ children, backgroundColor, image }) {
     return (
-        <div style={{ backgroundColor }}>
-            <div className='content'>
-                {children}
+        <div className='flexContainer segment' style={{ backgroundColor }}>
+            <div className='flexChild flexContainerCentered'>
+                <div>
+                    {children}
+                </div>
             </div>
-            <div className='imageWrapper'>
-                <img src={image} alt="Ed Sheeran"></img>
+            <div className='flexChild flexContainerCentered'>
+                <img className='image' src={image} alt="Ed Sheeran"></img>
             </div>
         </div>
     );
