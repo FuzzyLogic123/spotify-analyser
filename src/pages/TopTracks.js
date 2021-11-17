@@ -75,7 +75,7 @@ function TopTracks() {
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                     </ div>
@@ -83,7 +83,7 @@ function TopTracks() {
                     <div className='flexContainer' style={{ backgroundColor: 'yellowgreen' }}>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.mediumTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.mediumTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                         <div className='flexChild trackContent flexContainerCentered'>
@@ -96,7 +96,7 @@ function TopTracks() {
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[0].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                     </ div>

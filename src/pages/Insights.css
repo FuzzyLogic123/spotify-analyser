@@ -2,14 +2,14 @@
     color: white;
     font-weight: 800;
     font-size: 5rem;
-    margin: 0;
+    margin: 1rem;
 }
 
 .result {
     color: white;
     font-size: 10vw;
     font-weight: 900;
-    margin: 0;
+    margin: 1rem;
 }
 
 .obscurePrompt {

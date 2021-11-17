@@ -1,0 +1,28 @@
+.mediumText {
+    font-size: 5vw;
+    font-weight: 500;
+    color: white;
+}
+
+.artistIndex {
+    font-weight: 800;
+    display: inline-block;
+}
+
+.flexChildSmall {
+    flex: 0.7;
+    text-align: center;
+}
+
+.artistListed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.artistImages {
+    height: 70%;
+    width: 70%;
+    margin: 1rem;
+}
