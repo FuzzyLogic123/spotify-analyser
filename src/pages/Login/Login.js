@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginHero from '../Components/LoginHero/LoginHero';
-import LoginButton from '../Components/LoginButton/LoginButton';
+import LoginHero from '../../Components/LoginHero/LoginHero';
+import LoginButton from '../../Components/LoginButton/LoginButton';
 
 
 function Login() {

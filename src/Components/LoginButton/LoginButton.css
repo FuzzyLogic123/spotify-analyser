@@ -9,20 +9,11 @@
     border-style: none;
     font-size: 2rem;
     font-weight: 900;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    animation-duration: 3s;
 }
 
 .buttonWrapper {
-    position: relative;
-    height: 70vh;
-    width: 100vw;
-}
-
-.loginButton:hover {
-    box-shadow: 20px 20px 60px #807f7f, -20px -20px 60px #ffffff;
-    height: 7.1rem;
-    width: 30.5rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
 }

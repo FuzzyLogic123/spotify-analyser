@@ -1,55 +1,35 @@
 .heroWrapper {
     height: 100vh;
     width: 100vw;
+    overflow-y: clip;
 }
 
 .header {
     font-size: 15vw;
     text-align: left;
     margin: 2rem;
-    z-index: 1;
 }
 
 .headerWrapper {
     width: 100%;
-    z-index: 1;
+}
+.ball {
+    position: absolute;
 }
 
-.background-circle-small {
-    width: 5vw;
-    height: 5vw;
-    position: absolute;
-    top: 25%;
-    left: 40%;
-    background-color: #34D564;
-    border-radius: 100%;
+.font {
+    z-index: 0;
 }
 
-.background-circle-medium {
-    width: 25vw;
-    height: 25vw;
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    background-color: #1DB954;
-    border-radius: 100%;
-    z-index: -1;
-}
-
-.background-circle-large {
-    height: 70vw;
-    width: 70vw;
-    position: absolute;
-    top: 20%;
-    left: 75%;
-    background-color: #28c25e;
-    border-radius: 100%;
+.back {
     z-index: -1;
 }
 
 .arrow {
-    position: absolute;
-    left: 30%;
-    text-align: center;
     font-size: 7rem;
+}
+
+.arrowPosition {
+    position: absolute;
+    left: 30vw;
 }

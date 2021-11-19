@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Login from './pages/Login.js';
-import Menu from './pages/Menu.js';
-import Insights from './pages/Insights';
-import TopTracks from './pages/TopTracks';
-import TopArtists from './pages/TopArtists';
+import Login from './pages//Login/Login.js';
+import Menu from './pages//Menu/Menu.js';
+import Insights from './pages/Insights/Insights';
+import TopTracks from './pages//TopTracks/TopTracks';
+import TopArtists from './pages/TopArtists/TopArtists';
 
 function App() {
   return (

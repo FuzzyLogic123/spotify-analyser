@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import NavBar from '../Components/NavBar/NavBar';
-import Song from '../Components/Song/Song';
+import NavBar from '../../Components/NavBar/NavBar';
+import Song from '../../Components/Song/Song';
 import './TopTracks.css';
 
 const accessToken = localStorage.getItem('accessToken');

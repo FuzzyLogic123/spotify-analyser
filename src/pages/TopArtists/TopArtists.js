@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
-import DisplayInfo from '../Components/DisplayInfo/DisplayInfo.js';
-import DisplayInfoRight from '../Components/DisplayInfo/DisplayInfoRight.js';
-import NavBar from '../Components/NavBar/NavBar.js';
+import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js';
+import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js';
+import NavBar from '../../Components/NavBar/NavBar.js';
 import './TopArtists.css'
 
 const accessToken = localStorage.getItem('accessToken');
@@ -58,7 +58,6 @@ function TopArtists() {
                 mediumTerm: mediumTermData,
                 longTerm: longTermData
             });
-            console.log(artistData);
             setIsLoading(false);
         }))
             .catch((error) => {

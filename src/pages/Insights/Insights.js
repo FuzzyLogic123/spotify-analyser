@@ -1,11 +1,11 @@
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import DisplayInfo from '../Components/DisplayInfo/DisplayInfo.js'
-import DisplayInfoRight from '../Components/DisplayInfo/DisplayInfoRight.js'
-import NavBar from '../Components/NavBar/NavBar.js';
+import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js'
+import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js'
+import NavBar from '../../Components/NavBar/NavBar.js';
 import './Insights.css'
 import axios from 'axios';
-import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../Constants/dataProcessFunctions.js';
+import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../Constants/dataProcessFunctions.js';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/'
