@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Menu.css'
 import { motion } from 'framer-motion';
+import edSheeran from '../../images/edSheeran.jpg';
+import arianaGrande from '../../images/arianaGrande.jpg';
 
 
 const getReturnedParamsFromSpotifyAuth = (hash) => {
@@ -32,19 +34,36 @@ function Menu() {
         }
     });
     return (
-        <div className="menuWrapper">
-            <div className="menuItems">
-                <motion.div className='menuItem' whileHover={{x: '5rem', textDecoration: 'underline'}}>
-                    <Link className='menuLink' to="/insights">INSIGHTS</Link>
-                </motion.div>
-                <motion.div className='menuItem' whileHover={{x: '5rem', textDecoration: 'underline'}}>
-                    <Link className='menuLink' to="/topTracks">TOP TRACKS</Link>
-                </motion.div>
-                <motion.div className='menuItem' whileHover={{x: '5rem', textDecoration: 'underline'}}>
-                    <Link className='menuLink' to="/topArtists">TOP ARTISTS</Link>
-                </motion.div>
+        <>
+            <motion.img
+                animate={{ y: 30 }}
+                transition={{ repeat: Infinity, repeatType: 'reverse', duration: 3, mass: 10, damping: 500 }}
+                className='floatingImage1 floatingImage'
+                src={edSheeran} alt='Ed Sheeran'>
+
+            </motion.img>
+            <motion.img
+                animate={{ y: -25 }}
+                transition={{ repeat: Infinity, repeatType: 'reverse', duration: 2, mass: 10, damping: 500 }}
+                className='floatingImage2 floatingImage'
+                src={arianaGrande}
+                alt='Ed Sheeran'>
+
+            </motion.img>
+            <div className="menuWrapper">
+                <div className="menuItems">
+                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                        <Link className='menuLink' to="/insights">INSIGHTS</Link>
+                    </motion.div>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                        <Link className='menuLink' to="/topTracks">TOP TRACKS</Link>
+                    </motion.div>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                        <Link className='menuLink' to="/topArtists">TOP ARTISTS</Link>
+                    </motion.div>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
