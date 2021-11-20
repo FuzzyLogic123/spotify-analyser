@@ -1,15 +1,20 @@
 import React from 'react';
 import './NavBar.css'
 import { Link } from 'react-router-dom';
+import FadeInOnScroll from '../FadeInOnScroll';
 
 function NavBar({ backgroundColor, textColor }) {
     return (
         <div style={{ backgroundColor: backgroundColor, color: textColor }} className="navBar">
-            <Link className='link' to="/menu">Menu</Link>
-            <Link className='link' to="" onClick={() => {
-                window.location = "http://accounts.spotify.com/";
-                localStorage.clear();
-            }}>Sign Out 👋</Link>
+            <FadeInOnScroll>
+                <Link className='link' to="/menu">Menu</Link>
+            </FadeInOnScroll>
+            <FadeInOnScroll>
+                <Link className='link' to="" onClick={() => {
+                    window.location = "http://accounts.spotify.com/";
+                    localStorage.clear();
+                }}>Sign Out 👋</Link>
+            </FadeInOnScroll>
         </div>
     );
 }

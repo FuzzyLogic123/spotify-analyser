@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js'
 import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js'
 import NavBar from '../../Components/NavBar/NavBar.js';
+import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
 import './Insights.css'
 import axios from 'axios';
 import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../Constants/dataProcessFunctions.js';
@@ -75,17 +76,21 @@ function Insights() {
                         <h1 className='result'>{obscureArtist.name}</h1>
                     </DisplayInfoRight>
 
-                    <div className="flexContainer" style={{ backgroundColor: 'black', position: 'relative' , height: '50vh'}}>
+                    <div className="flexContainer" style={{ backgroundColor: 'black', position: 'relative', height: '50vh' }}>
                         <div className="flexChild flexContainerCentered">
                             <div>
-                                <h1 className='obscurePrompt prompt'>Obsurity Rating*</h1>
-                                <h4 className='obscureResult'>*based on the popularity of your top 20 artists. Higher is more obscure</h4>
+                                <FadeInOnScroll>
+                                    <h1 className='obscurePrompt prompt'>Obsurity Rating*</h1>
+                                    <h4 className='obscureResult'>*based on the popularity of your top 20 artists. Higher is more obscure</h4>
+                                </ FadeInOnScroll>
                             </div>
                         </div>
                         <div className="flexChild flexContainerCentered">
-                            <h1 className='obscureResult result'>
-                                {`${(100 - obscurityRating).toFixed(2)}%`}
-                            </h1>
+                            <FadeInOnScroll>
+                                <h1 className='obscureResult result'>
+                                    {`${(100 - obscurityRating).toFixed(2)}%`}
+                                </h1>
+                            </ FadeInOnScroll>
                         </div>
                     </div>
                 </>}

@@ -5,6 +5,7 @@ import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js';
 import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js';
 import NavBar from '../../Components/NavBar/NavBar.js';
 import './TopArtists.css'
+import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
@@ -79,13 +80,17 @@ function TopArtists() {
                     <div className='flexContainer' style={{ backgroundColor: 'salmon' }}>
                         <div className='flexChildSmall segment flexContainerCentered'>
                             {/* <img className='image' src={artistData.mediumTerm[1].images[0].url} alt="second top artist"></img> */}
-                            <img className='image' src={artistData.mediumTerm[2].images[0].url} alt="third top artist"></img>
+                            <FadeInOnScroll>
+                                <img className='image' src={artistData.mediumTerm[2].images[0].url} alt="third top artist"></img>
+                            </FadeInOnScroll>
                         </div>
                         <div className='flexChild mediumText artistListed'>
                             {artistData.mediumTerm.slice(1).map((artist, i) => (
-                                <div>
-                                    <div className='artistIndex'>#{i + 2}</div> {artist.name}
-                                </div>
+                                <FadeInOnScroll>
+                                    <div>
+                                        <div className='artistIndex'>#{i + 2}</div> {artist.name}
+                                    </div>
+                                </FadeInOnScroll>
                             ))}
                         </div>
                     </ div>

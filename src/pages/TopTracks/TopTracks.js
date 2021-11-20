@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
 import Song from '../../Components/Song/Song';
 import './TopTracks.css';
+import FadeInOnScroll from '../../Components/FadeInOnScroll.js'
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
@@ -71,11 +72,13 @@ function TopTracks() {
                     <NavBar backgroundColor={'khaki'} />
                     <div className='flexContainer' style={{ backgroundColor: 'khaki' }}>
                         <div className='flexChild trackContent flexContainerCentered'>
-                            <h1>All Time</h1>
+                            <FadeInOnScroll>
+                                <h1>All Time</h1>
+                            </FadeInOnScroll>
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.longTerm.map((item, i) => <Song key={item.name} cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                     </ div>
@@ -87,12 +90,16 @@ function TopTracks() {
                             </div>
                         </div>
                         <div className='flexChild trackContent flexContainerCentered'>
-                            <h1>Medium Term</h1>
+                            <FadeInOnScroll>
+                                <h1>Medium Term</h1>
+                            </FadeInOnScroll>
                         </div>
                     </ div>
                     <div className='flexContainer' style={{ backgroundColor: 'cadetblue' }}>
                         <div className='flexChild trackContent flexContainerCentered'>
-                            <h1>Long Term</h1>
+                            <FadeInOnScroll>
+                                <h1>Long Term</h1>
+                            </FadeInOnScroll>
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>

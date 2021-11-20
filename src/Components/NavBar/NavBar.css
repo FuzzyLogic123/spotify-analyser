@@ -18,7 +18,7 @@
     background-color: transparent;
 }
 
-a:hover {
+link:hover {
     text-decoration: underline;
     text-decoration-color: white;
     text-decoration-thickness: 0.25rem;
