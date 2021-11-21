@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: 20vw;
+    /* max-width: 20vw; */
     min-width: 25rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -18,6 +18,7 @@
 
 .infoWrapper {
     text-align: left;
+    width: 15rem;
 }
 
 .songName {
@@ -41,11 +42,10 @@
 .albumCover {
     margin-left: 3rem;
     margin-right: 3rem;
-    height: 5rem;
-    width: 5rem;
+    min-height: 5rem;
+    min-width: 5rem;
     border-radius: 15px;
-    max-width: 100%;
-    max-height: 100%;
+    object-fit: cover;
 }
 
 .index {

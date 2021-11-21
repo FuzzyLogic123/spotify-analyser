@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useRef } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js'
 import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js'
@@ -7,7 +7,8 @@ import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
 import './Insights.css'
 import axios from 'axios';
 import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../Constants/dataProcessFunctions.js';
-import { FaVolumeDown as VolumeOn, FaVolumeMute as VolumeOff } from 'react-icons/fa'
+import { HiVolumeUp as VolumeOn, HiVolumeOff as VolumeOff } from 'react-icons/hi'
+import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer.js';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/'
@@ -25,7 +26,6 @@ function Insights() {
     const [artistData, setArtistData] = useState({});
     const [trackData, setTrackData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [soundOn, setSoundOn] = useState(false);
     const getUserData = () => {
         const artistsRequest = axios.get(SPOTIFY_ENDPOINT + 'artists', config);
         const tracksRequest = axios.get(SPOTIFY_ENDPOINT + 'tracks', config);
@@ -46,31 +46,12 @@ function Insights() {
         })
     }
     useEffect(getUserData, [navigate]);
-    const songCountRef = useRef(0);
-    const audioPlayerRef = useRef();
-    const getNextSong = () => {
-        if (songCountRef.current < trackData.length) {
-            songCountRef.current++
-            const audioPlayer = new Audio(trackData[songCountRef.current].preview_url)
-            audioPlayerRef.current = audioPlayer;
-            audioPlayer.play()
-            setSoundOn(true);
-            audioPlayer.addEventListener('ended', getNextSong)
-        }
-    }
     return (
         <>
             {isLoading
                 ? <div>Data is still loading</div>
                 : <>
-                    {soundOn ? <VolumeOn onClick={() => {
-                        audioPlayerRef.current.pause()
-                        setSoundOn(false);
-                    }} /> : <VolumeOff onClick={() => {
-                        songCountRef.current -= 1;
-                        getNextSong();
-                    }} />}
-
+                    <MusicPlayer trackData={trackData} />
                     <NavBar backgroundColor={'#FBE7C6'} textColor={'white'} />
                     <DisplayInfo backgroundColor={'#FBE7C6'} image={artistData[0].images[0].url}>
                         <h1 className="prompt">Top Artist</h1>

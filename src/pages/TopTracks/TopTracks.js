@@ -1,10 +1,11 @@
-import { React, useEffect, useState, useRef } from 'react';
+import { React, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
 import Song from '../../Components/Song/Song';
 import './TopTracks.css';
 import FadeInOnScroll from '../../Components/FadeInOnScroll.js'
+import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
@@ -63,25 +64,13 @@ function TopTracks() {
             })
     }
     useEffect(getUserData, [navigate]);
-    const songCountRef = useRef(0);
-    const getNextSong = () => {
-        if (songCountRef.current < trackData.length) {
-            songCountRef.current++
-            const audioPlayer = new Audio(trackData.longTerm[songCountRef.current].preview_url)
-            audioPlayer.play()
-            audioPlayer.addEventListener('ended', getNextSong)
-        }
-    }
     return (
         <>
             {isLoading
                 ? <div>Data is still loading</div>
                 :
                 <>
-                    {/* TODO: Add volume icon, that starts playing music */}
-                    <audio autoPlay onEnded={getNextSong}>
-                        <source src={trackData.longTerm[songCountRef.current].preview_url} />
-                    </audio>
+                    <MusicPlayer trackData={trackData.longTerm} />
                     <NavBar backgroundColor={'khaki'} />
                     <div className='flexContainer' style={{ backgroundColor: 'khaki' }}>
                         <div className='flexChild trackContent flexContainerCentered'>
