@@ -10,7 +10,7 @@ body {
 
 .menuItems {
     list-style-type: none;
-    font-size: 10rem;
+    font-size: 7vw;
     padding: 3rem;
     position: absolute;
     top: 50%;
@@ -35,6 +35,9 @@ body {
 }
 .floatingImage {
     position: absolute;
+    max-height: 50vh;
+    width: 20vw;
+    object-fit: cover;
 }
 
 .floatingImage1 {

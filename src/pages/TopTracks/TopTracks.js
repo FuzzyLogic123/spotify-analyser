@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from 'react';
+import { React, useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -63,12 +63,25 @@ function TopTracks() {
             })
     }
     useEffect(getUserData, [navigate]);
+    const songCountRef = useRef(0);
+    const getNextSong = () => {
+        if (songCountRef.current < trackData.length) {
+            songCountRef.current++
+            const audioPlayer = new Audio(trackData.longTerm[songCountRef.current].preview_url)
+            audioPlayer.play()
+            audioPlayer.addEventListener('ended', getNextSong)
+        }
+    }
     return (
         <>
             {isLoading
                 ? <div>Data is still loading</div>
                 :
                 <>
+                    {/* TODO: Add volume icon, that starts playing music */}
+                    <audio autoPlay onEnded={getNextSong}>
+                        <source src={trackData.longTerm[songCountRef.current].preview_url} />
+                    </audio>
                     <NavBar backgroundColor={'khaki'} />
                     <div className='flexContainer' style={{ backgroundColor: 'khaki' }}>
                         <div className='flexChild trackContent flexContainerCentered'>
@@ -86,7 +99,7 @@ function TopTracks() {
                     <div className='flexContainer' style={{ backgroundColor: 'yellowgreen' }}>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.mediumTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.mediumTerm.map((item, i) => <Song key={item.name} cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                         <div className='flexChild trackContent flexContainerCentered'>
@@ -103,7 +116,7 @@ function TopTracks() {
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.longTerm.map((item, i) => <Song cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.longTerm.map((item, i) => <Song key={item.name} cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                     </ div>
