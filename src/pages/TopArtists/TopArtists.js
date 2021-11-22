@@ -7,6 +7,7 @@ import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js';
 import NavBar from '../../Components/NavBar/NavBar.js';
 import './TopArtists.css'
 import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
+import Loader from '../../Components/Loader/Loader.js';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
@@ -71,7 +72,7 @@ function TopArtists() {
     return (
         <>
             {isLoading
-                ? <div>data is still loading</div>
+                ? <Loader />
                 :
                 <>
                     <NavBar backgroundColor={'brown'} />

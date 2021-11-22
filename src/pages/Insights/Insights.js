@@ -9,6 +9,7 @@ import './Insights.css'
 import axios from 'axios';
 import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../Constants/dataProcessFunctions.js';
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer.js';
+import Loader from '../../Components/Loader/Loader.js'
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/'
@@ -49,7 +50,7 @@ function Insights() {
     return (
         <>
             {isLoading
-                ? <div>Data is still loading</div>
+                ? <Loader />
                 : <>
                     <MusicPlayer trackData={trackData} />
                     <NavBar backgroundColor={'#FBE7C6'} textColor={'white'} />

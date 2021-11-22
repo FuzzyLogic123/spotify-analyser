@@ -1,0 +1,17 @@
+.loader {
+    border-radius: 50%;
+    border: 16px solid #4eb3d1;
+    border-top: 16px solid;
+    border-width: 0.5rem;
+}
+
+.loaderBackground {
+    background-color: #4eb3d1;
+    height: 100vh;
+}
+
+.loaderText {
+    color: black;
+    position: relative;
+    margin-top: 10rem;
+}

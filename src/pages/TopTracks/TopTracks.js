@@ -7,6 +7,7 @@ import Song from '../../Components/Song/Song';
 import './TopTracks.css';
 import FadeInOnScroll from '../../Components/FadeInOnScroll.js'
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer';
+import Loader from '../../Components/Loader/Loader.js';
 
 const accessToken = localStorage.getItem('accessToken');
 const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
@@ -68,7 +69,7 @@ function TopTracks() {
     return (
         <>
             {isLoading
-                ? <div>Data is still loading</div>
+                ? <Loader />
                 :
                 <>
                     <MusicPlayer trackData={trackData.longTerm} />

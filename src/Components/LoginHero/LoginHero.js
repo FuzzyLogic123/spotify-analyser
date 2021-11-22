@@ -22,7 +22,7 @@ function LoginHero() {
                 </div>
                 <motion.div className='arrowPosition'
                     animate={{ y: [50, 0] }}
-                    transition={{ yoyo: Infinity }}>
+                    transition={{ repeat: Infinity, repeatType: 'reverse' }}>
                     <Arrow className="arrow" onClick={() => {
                         window.scroll({
                             top: 500,

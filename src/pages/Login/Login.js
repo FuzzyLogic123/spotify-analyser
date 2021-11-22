@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
     let navigate = useNavigate();
     useEffect(() => {
-        if (localStorage.getItem("accessToken")) {
+        if (new Date() < new Date(localStorage.getItem('expiresAt')) && localStorage.getItem("accessToken")) {
             navigate('/');
         }
     });

@@ -33,8 +33,7 @@ function Menu() {
             localStorage.setItem("accessToken", access_token);
             localStorage.setItem("tokenType", token_type);
             localStorage.setItem("expiresAt", expire_time);
-        }
-        if (!localStorage.getItem("accessToken") || new Date() > new Date(localStorage.getItem('expiresAt'))) {
+        } else if (!localStorage.getItem("accessToken") || new Date() > new Date(localStorage.getItem('expiresAt'))) {
             navigate('/login');
         }
     });
