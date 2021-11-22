@@ -7,7 +7,6 @@ import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
 import './Insights.css'
 import axios from 'axios';
 import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../Constants/dataProcessFunctions.js';
-import { HiVolumeUp as VolumeOn, HiVolumeOff as VolumeOff } from 'react-icons/hi'
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer.js';
 
 const accessToken = localStorage.getItem('accessToken');

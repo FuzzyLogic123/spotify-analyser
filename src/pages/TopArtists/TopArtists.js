@@ -86,7 +86,7 @@ function TopArtists() {
                         </div>
                         <div className='flexChild mediumText artistListed'>
                             {artistData.mediumTerm.slice(1).map((artist, i) => (
-                                <FadeInOnScroll>
+                                <FadeInOnScroll key={artist.name}>
                                     <div>
                                         <div className='artistIndex'>#{i + 2}</div> {artist.name}
                                     </div>
