@@ -5,17 +5,19 @@ import Menu from './pages//Menu/Menu.js';
 import Insights from './pages/Insights/Insights';
 import TopTracks from './pages//TopTracks/TopTracks';
 import TopArtists from './pages/TopArtists/TopArtists';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
     <div>
       <Router>
         <Routes>
-          <Route path={"/"} element={<Login />} />
-          <Route path={"/menu"} element={<Menu />} />
+          <Route path={"/"} element={<Menu />} />
+          <Route path={"/login"} element={<Login />} />
           <Route path={"/insights"} element={<Insights />} />
           <Route path={"/topTracks"} element={<TopTracks />} />
           <Route path={"/topArtists"} element={<TopArtists />} />
+          <Route path={"*"} element={<PageNotFound />} />
         </Routes>
       </Router>
     </div >

@@ -1,4 +1,5 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js'
 import DisplayInfoRight from '../../Components/DisplayInfo/DisplayInfoRight.js'
@@ -41,7 +42,7 @@ function Insights() {
         })).catch(error => {
             // react on errors.
             console.log(error);
-            navigate('/');
+            navigate('/login');
         })
     }
     useEffect(getUserData, [navigate]);

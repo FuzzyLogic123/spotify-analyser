@@ -1,4 +1,5 @@
-import { React, useEffect } from 'react';
+import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Menu.css'
@@ -11,7 +12,6 @@ const getReturnedParamsFromSpotifyAuth = (hash) => {
     const stringAfterHashtag = hash.substring(1);
     const paramsInUrl = stringAfterHashtag.split("&");
     const paramsSplitUp = paramsInUrl.reduce((accumulater, currentValue) => {
-        console.log(currentValue);
         const [key, value] = currentValue.split("=");
         accumulater[key] = value;
         return accumulater;
@@ -25,12 +25,17 @@ function Menu() {
         if (window.location.hash) {
             const { access_token, expires_in, token_type } = getReturnedParamsFromSpotifyAuth(window.location.hash);
             //remove hash in url
-            navigate("/Menu", { replace: true });
+            navigate("/", { replace: true });
             localStorage.clear();
-
+            const currentTime = new Date().getTime();
+            const expire_time = new Date(currentTime + Number(expires_in) * 1000);
+            console.log(expire_time.toLocaleTimeString())
             localStorage.setItem("accessToken", access_token);
             localStorage.setItem("tokenType", token_type);
-            localStorage.setItem("expiresIn", expires_in);
+            localStorage.setItem("expiresAt", expire_time);
+        }
+        if (!localStorage.getItem("accessToken") || new Date() > new Date(localStorage.getItem('expiresAt'))) {
+            navigate('/login');
         }
     });
     return (
@@ -60,6 +65,12 @@ function Menu() {
                     </motion.div>
                     <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
                         <Link className='menuLink' to="/topArtists">TOP ARTISTS</Link>
+                    </motion.div>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                        <Link className='menuLink' to="" onClick={() => {
+                            window.location = "http://accounts.spotify.com/";
+                            localStorage.clear();
+                        }}>LOGOUT</Link>
                     </motion.div>
                 </div>
             </div>

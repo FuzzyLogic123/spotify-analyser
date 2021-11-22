@@ -1,4 +1,5 @@
-import { React, useState, useEffect } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import axios from 'axios';
 import DisplayInfo from '../../Components/DisplayInfo/DisplayInfo.js';
@@ -63,7 +64,7 @@ function TopArtists() {
         }))
             .catch((error) => {
                 console.log(error);
-                navigate('/');
+                navigate('/login');
             })
     }
     useEffect(getUserData, [navigate]);

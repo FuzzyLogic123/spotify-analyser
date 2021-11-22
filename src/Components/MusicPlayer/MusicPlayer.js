@@ -1,4 +1,5 @@
-import { React, useRef, useState, useEffect } from 'react';
+import React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { HiVolumeUp as VolumeOn, HiVolumeOff as VolumeOff } from 'react-icons/hi'
 import './MusicPlayer.css'
 
@@ -18,7 +19,7 @@ function MusicPlayer({ trackData }) {
         audioPlayer.addEventListener('ended', getNextSong)
     }
     useEffect( () => {
-        return () => audioPlayerRef.current.pause();
+        return () => audioPlayerRef.current && audioPlayerRef.current.pause();
     }, []);
     return (
         <>

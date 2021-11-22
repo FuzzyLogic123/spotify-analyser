@@ -1,0 +1,23 @@
+.menuRedirectButton {
+    font-family: Helvetica, Arial, sans-serif;
+    color: seashell;
+    border-radius: 10rem;
+    background: #34D564;
+    height: 7rem;
+    width: 30rem;
+    border-style: none;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.absoluteCentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFoundBackground {
+    background-color: black;
+    height: 100vh;
+}

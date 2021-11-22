@@ -1,4 +1,5 @@
-import { React, useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -60,7 +61,7 @@ function TopTracks() {
         }))
             .catch((error) => {
                 console.log(error);
-                navigate('/');
+                navigate('/login');
             })
     }
     useEffect(getUserData, [navigate]);
