@@ -1,18 +1,21 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Loader.css'
-
 
 function Loader() {
     const loadingPhrases = ['lubricating catapult', 'fetching data', 'insulting political opponent']
     const [phraseIndex, setPhraseIndex] = useState(Math.floor(Math.random() * (loadingPhrases.length)));
-    setTimeout(() => {
-        if (phraseIndex === loadingPhrases.length - 1) {
-            setPhraseIndex(0);
-        } else
-            setPhraseIndex(phraseIndex + 1);
-    }, 3000);
+    useEffect(()=> {
+        const timeoutHandle = setTimeout(() => {
+            if (phraseIndex === loadingPhrases.length - 1) {
+                setPhraseIndex(0);
+            } else
+                setPhraseIndex(phraseIndex + 1);
+        }, 3000)
+        return ()=> clearTimeout(timeoutHandle);
+    });
+
     return (
         <div
             className='loaderBackground'>

@@ -56,16 +56,16 @@ function Menu() {
             </motion.img>
             <div className="menuWrapper">
                 <div className="menuItems">
-                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem' }}>
                         <Link className='menuLink' to="/insights">INSIGHTS</Link>
                     </motion.div>
-                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem' }}>
                         <Link className='menuLink' to="/topTracks">TOP TRACKS</Link>
                     </motion.div>
-                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem' }}>
                         <Link className='menuLink' to="/topArtists">TOP ARTISTS</Link>
                     </motion.div>
-                    <motion.div className='menuItem' whileHover={{ x: '5rem', textDecoration: 'underline' }}>
+                    <motion.div className='menuItem' whileHover={{ x: '5rem' }}>
                         <Link className='menuLink' to="" onClick={() => {
                             window.location = "http://accounts.spotify.com/";
                             localStorage.clear();

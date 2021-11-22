@@ -33,6 +33,11 @@ body {
     text-decoration-color: brown;
     text-decoration-thickness: 20px;
 }
+
+.menuLink:hover {
+    text-decoration: underline;
+}
+
 .floatingImage {
     position: absolute;
     max-height: 50vh;
