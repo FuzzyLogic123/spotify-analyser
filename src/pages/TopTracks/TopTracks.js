@@ -9,46 +9,15 @@ import FadeInOnScroll from '../../Components/FadeInOnScroll.js'
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer';
 import Loader from '../../Components/Loader/Loader.js';
 
-const accessToken = localStorage.getItem('accessToken');
-const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
-const longTermConfig = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 10,
-        time_range: 'short_term'
-    },
-};
-
-const mediumTermConfg = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 10,
-        time_range: 'medium_term'
-    },
-};
-
-const longTermConfg = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 10,
-        time_range: 'long_term'
-    },
-};
-
 function TopTracks() {
     let navigate = useNavigate();
+    const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
     const [trackData, setTrackData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const getUserData = () => {
-        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', longTermConfig);
-        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', mediumTermConfg);
-        const allTime = axios.get(SPOTIFY_ENDPOINT + 'tracks', longTermConfg);
+    const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
+        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', shortTermConfig);
+        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', mediumTermConfig);
+        const allTime = axios.get(SPOTIFY_ENDPOINT + 'tracks', longTermConfig);
         axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
             const shortTermData = responses[0].data.items;
             const mediumTermData = responses[1].data.items;
@@ -65,7 +34,39 @@ function TopTracks() {
                 navigate('/login');
             })
     }
-    useEffect(getUserData, [navigate]);
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        const shortTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 10,
+                time_range: 'short_term'
+            },
+        };
+
+        const mediumTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 10,
+                time_range: 'medium_term'
+            },
+        };
+
+        const longTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 10,
+                time_range: 'long_term'
+            },
+        };
+        getUserData(longTermConfig, mediumTermConfig, shortTermConfig);
+    });
     return (
         <>
             {isLoading

@@ -9,53 +9,19 @@ import './TopArtists.css'
 import FadeInOnScroll from '../../Components/FadeInOnScroll.js';
 import Loader from '../../Components/Loader/Loader.js';
 
-const accessToken = localStorage.getItem('accessToken');
-const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
-const longTermConfig = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 5,
-        time_range: 'short_term'
-    },
-};
-
-const mediumTermConfg = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 5,
-        time_range: 'medium_term'
-    },
-};
-
-const longTermConfg = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken
-    },
-    params: {
-        limit: 5,
-        time_range: 'long_term'
-    },
-};
-
 function TopArtists() {
     let navigate = useNavigate();
+    const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
     const [artistData, setArtistData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const getUserData = () => {
-        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', longTermConfig);
-        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', mediumTermConfg);
-        const allTime = axios.get(SPOTIFY_ENDPOINT + 'artists', longTermConfg);
+    const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
+        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', shortTermConfig);
+        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', mediumTermConfig);
+        const allTime = axios.get(SPOTIFY_ENDPOINT + 'artists', longTermConfig);
         axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
             const shortTermData = responses[0].data.items;
             const mediumTermData = responses[1].data.items;
             const longTermData = responses[2].data.items;
-            console.log(shortTermData);
-            console.log(mediumTermData);
-            console.log(longTermData);
             setArtistData({
                 shortTerm: shortTermData,
                 mediumTerm: mediumTermData,
@@ -68,7 +34,39 @@ function TopArtists() {
                 navigate('/login');
             })
     }
-    useEffect(getUserData, [navigate]);
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        const shortTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 5,
+                time_range: 'short_term'
+            },
+        };
+
+        const mediumTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 5,
+                time_range: 'medium_term'
+            },
+        };
+
+        const longTermConfig = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken
+            },
+            params: {
+                limit: 5,
+                time_range: 'long_term'
+            },
+        };
+        getUserData(longTermConfig, mediumTermConfig, shortTermConfig);
+    });
     return (
         <>
             {isLoading

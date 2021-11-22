@@ -11,23 +11,17 @@ import { mostObscureArtist, mostPopularArtist, getObscurityRating } from '../../
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer.js';
 import Loader from '../../Components/Loader/Loader.js'
 
-const accessToken = localStorage.getItem('accessToken');
-const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/'
-const config = {
-    headers: {
-        Authorization: 'Bearer ' + accessToken,
-    },
-};
 
 function Insights() {
     let navigate = useNavigate();
+    const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
     const [popArtist, setPopArtist] = useState({});
     const [obscureArtist, setObscureArtist] = useState({});
     const [obscurityRating, setObscurityRating] = useState(0);
     const [artistData, setArtistData] = useState({});
     const [trackData, setTrackData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const getUserData = () => {
+    const getUserData = (config) => {
         const artistsRequest = axios.get(SPOTIFY_ENDPOINT + 'artists', config);
         const tracksRequest = axios.get(SPOTIFY_ENDPOINT + 'tracks', config);
 
@@ -46,7 +40,16 @@ function Insights() {
             navigate('/login');
         })
     }
-    useEffect(getUserData, [navigate]);
+    useEffect(() => {
+        const accessToken = localStorage.getItem('accessToken');
+        const config = {
+            headers: {
+                Authorization: 'Bearer ' + accessToken,
+            },
+        };
+        getUserData(config);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [navigate]);
     return (
         <>
             {isLoading

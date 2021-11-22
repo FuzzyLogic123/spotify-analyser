@@ -36,7 +36,7 @@ function Menu() {
         } else if (!localStorage.getItem("accessToken") || new Date() > new Date(localStorage.getItem('expiresAt'))) {
             navigate('/login');
         }
-    });
+    }, [navigate]);
     return (
         <>
             <motion.img
