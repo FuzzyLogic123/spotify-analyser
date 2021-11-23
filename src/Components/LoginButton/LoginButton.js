@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 const CLIENT_ID = '15dcac667eac4a248e56c9babfd7732a';
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = "http://spotilyser.tk/";
+// const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/";
 const SCOPE = "user-top-read user-library-read";
 
 function LoginButton() {

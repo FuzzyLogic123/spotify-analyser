@@ -1,7 +1,3 @@
-body {
-    overflow-y: none;
-}
-
 .menuWrapper {
     background-color: #4eb3d1;
     height: 100vh;
@@ -11,7 +7,6 @@ body {
 .menuItems {
     list-style-type: none;
     font-size: 7vw;
-    padding: 3rem;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -19,7 +14,7 @@ body {
 
 .menuItem {
     display: block;
-    margin: 3rem;
+    margin: 2.5rem;
     color: rgb(0, 0, 0);
     font-weight: 700;
     text-decoration: none;
