@@ -11,7 +11,7 @@ function Ball({ size, color, left, top, offset, depth }) {
         backgroundColor: color,
         borderRadius: '100rem',
     }
-    const y = useTransform(scrollYProgress, [0, 5], [0.1, offset]);
+    const y = useTransform(scrollYProgress, [0, 5], ['0.1px', offset]);
     return (
             <motion.div className={`ball ${depth}`} style={{ y }}>
                 <div className='ball' style={ballStyle}></div>

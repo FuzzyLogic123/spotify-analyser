@@ -14,26 +14,6 @@ function TopArtists() {
     const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
     const [artistData, setArtistData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
-        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', shortTermConfig);
-        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', mediumTermConfig);
-        const allTime = axios.get(SPOTIFY_ENDPOINT + 'artists', longTermConfig);
-        axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
-            const shortTermData = responses[0].data.items;
-            const mediumTermData = responses[1].data.items;
-            const longTermData = responses[2].data.items;
-            setArtistData({
-                shortTerm: shortTermData,
-                mediumTerm: mediumTermData,
-                longTerm: longTermData
-            });
-            setIsLoading(false);
-        }))
-            .catch((error) => {
-                console.log(error);
-                navigate('/login');
-            })
-    }
     useEffect(() => {
         const accessToken = localStorage.getItem('accessToken');
         const shortTermConfig = {
@@ -65,8 +45,28 @@ function TopArtists() {
                 time_range: 'long_term'
             },
         };
+        const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
+            const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', shortTermConfig);
+            const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'artists', mediumTermConfig);
+            const allTime = axios.get(SPOTIFY_ENDPOINT + 'artists', longTermConfig);
+            axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
+                const shortTermData = responses[0].data.items;
+                const mediumTermData = responses[1].data.items;
+                const longTermData = responses[2].data.items;
+                setArtistData({
+                    shortTerm: shortTermData,
+                    mediumTerm: mediumTermData,
+                    longTerm: longTermData
+                });
+                setIsLoading(false);
+            }))
+                .catch((error) => {
+                    console.log(error);
+                    navigate('/login');
+                })
+        }
         getUserData(longTermConfig, mediumTermConfig, shortTermConfig);
-    });
+    }, [navigate]);
     return (
         <>
             {isLoading

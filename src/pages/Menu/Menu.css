@@ -30,12 +30,12 @@ body {
 .menuLink {
     color: inherit;
     text-decoration: none;
-    text-decoration-color: brown;
     text-decoration-thickness: 20px;
 }
 
 .menuLink:hover {
     text-decoration: underline;
+    text-decoration-color: brown;
 }
 
 .floatingImage {

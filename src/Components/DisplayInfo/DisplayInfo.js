@@ -6,11 +6,9 @@ function DisplayInfo({ children, backgroundColor, image }) {
     return (
         <div className='flexContainer segment' style={{ backgroundColor }}>
             <div className='flexChild flexContainerCentered'>
-                <div>
-                    <FadeInOnScroll>
-                        {children}
-                    </ FadeInOnScroll>
-                </div>
+                <FadeInOnScroll>
+                    {children}
+                </ FadeInOnScroll>
             </div>
             <div className='flexChild flexContainerCentered'>
                 <FadeInOnScroll>
@@ -19,6 +17,6 @@ function DisplayInfo({ children, backgroundColor, image }) {
             </div>
         </div>
     );
-}
+} 
 
 export default DisplayInfo;

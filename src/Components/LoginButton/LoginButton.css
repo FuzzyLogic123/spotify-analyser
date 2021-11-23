@@ -11,6 +11,10 @@
     font-weight: 900;
 }
 
+.loginButton:hover {
+    cursor: pointer;
+}
+
 .buttonWrapper {
     width: 100%;
     text-align: center;

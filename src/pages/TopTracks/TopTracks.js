@@ -14,26 +14,7 @@ function TopTracks() {
     const SPOTIFY_ENDPOINT = 'https://api.spotify.com/v1/me/top/';
     const [trackData, setTrackData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
-        const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', shortTermConfig);
-        const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', mediumTermConfig);
-        const allTime = axios.get(SPOTIFY_ENDPOINT + 'tracks', longTermConfig);
-        axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
-            const shortTermData = responses[0].data.items;
-            const mediumTermData = responses[1].data.items;
-            const longTermData = responses[2].data.items;
-            setTrackData({
-                shortTerm: shortTermData,
-                mediumTerm: mediumTermData,
-                longTerm: longTermData
-            });
-            setIsLoading(false);
-        }))
-            .catch((error) => {
-                console.log(error);
-                navigate('/login');
-            })
-    }
+    
     useEffect(() => {
         const accessToken = localStorage.getItem('accessToken');
         const shortTermConfig = {
@@ -65,8 +46,28 @@ function TopTracks() {
                 time_range: 'long_term'
             },
         };
+        const getUserData = (longTermConfig, mediumTermConfig, shortTermConfig) => {
+            const shortTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', shortTermConfig);
+            const mediumTerm = axios.get(SPOTIFY_ENDPOINT + 'tracks', mediumTermConfig);
+            const allTime = axios.get(SPOTIFY_ENDPOINT + 'tracks', longTermConfig);
+            axios.all([shortTerm, mediumTerm, allTime]).then(axios.spread((...responses) => {
+                const shortTermData = responses[0].data.items;
+                const mediumTermData = responses[1].data.items;
+                const longTermData = responses[2].data.items;
+                setTrackData({
+                    shortTerm: shortTermData,
+                    mediumTerm: mediumTermData,
+                    longTerm: longTermData
+                });
+                setIsLoading(false);
+            }))
+                .catch((error) => {
+                    console.log(error);
+                    navigate('/login');
+                })
+        }
         getUserData(longTermConfig, mediumTermConfig, shortTermConfig);
-    });
+    }, [navigate]);
     return (
         <>
             {isLoading
@@ -103,12 +104,12 @@ function TopTracks() {
                     <div className='flexContainer' style={{ backgroundColor: 'cadetblue' }}>
                         <div className='flexChild trackContent flexContainerCentered'>
                             <FadeInOnScroll>
-                                <h1>Long Term</h1>
+                                <h1>Short Term</h1>
                             </FadeInOnScroll>
                         </div>
                         <div className='flexChild flexContainerCentered'>
                             <div className='songsContainer'>
-                                {trackData.longTerm.map((item, i) => <Song key={item.name} cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
+                                {trackData.shortTerm.map((item, i) => <Song key={item.name} cover={item.album.images[2].url} index={i + 1} name={item.name} artist={item.artists[0].name} />)}
                             </div>
                         </div>
                     </ div>

@@ -10,9 +10,9 @@ function LoginHero() {
     return (
         <>
             <div className='ballWrapper'>
-                <Ball size={'5vw'} top={'4vh'} left={'25vw'} color={'#34D564'} offset={1500} depth={'front'} />
-                <Ball size={'25vw'} top={'70vh'} left={'5vw'} color={'#1DB954'} offset={-600} depth={'back'} />
-                <Ball size={'60vw'} top={'20vh'} left={'80vw'} color={'#28c25e'} offset={0} depth={'back'} />
+                <Ball size={'5vw'} top={'4vh'} left={'25vw'} color={'#34D564'} offset={'1500px'} depth={'front'} />
+                <Ball size={'25vw'} top={'70vh'} left={'5vw'} color={'#1DB954'} offset={'-600px'} depth={'back'} />
+                <Ball size={'60vw'} top={'20vh'} left={'80vw'} color={'#28c25e'} offset={'-200px'} depth={'back'} />
             </div>
             <div className="heroWrapper">
                 <div className="headerWrapper">
@@ -25,7 +25,7 @@ function LoginHero() {
                     transition={{ repeat: Infinity, repeatType: 'reverse' }}>
                     <Arrow className="arrow" onClick={() => {
                         window.scroll({
-                            top: 500,
+                            top: document.body.scrollHeight,
                             behavior: 'smooth'
                         });
                     }} />

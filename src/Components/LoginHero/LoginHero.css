@@ -31,5 +31,6 @@
 
 .arrowPosition {
     position: absolute;
+    top: 75vh;
     left: 30vw;
 }
