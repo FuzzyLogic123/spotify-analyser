@@ -97,7 +97,7 @@ function TopTracks() {
                         </div>
                         <div className='flexChild trackContent flexContainerCentered'>
                             <FadeInOnScroll>
-                                <h1>Medium Term</h1>
+                                <h1>Mid Term</h1>
                             </FadeInOnScroll>
                         </div>
                     </ div>
