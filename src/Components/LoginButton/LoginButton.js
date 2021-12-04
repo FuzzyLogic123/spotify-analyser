@@ -2,6 +2,7 @@ import React from 'react';
 import './LoginButton.css'
 import { motion } from 'framer-motion';
 
+//using enviroment variables
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = "http://spotilyser.tk/";
