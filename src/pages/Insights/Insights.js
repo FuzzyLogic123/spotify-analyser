@@ -85,7 +85,7 @@ function Insights() {
                         <div className="flexChild flexContainerCentered">
                             <div>
                                 <FadeInOnScroll>
-                                    <h1 className='obscurePrompt prompt'>Obsurity Rating*</h1>
+                                    <h1 className='obscurePrompt prompt'>Obscurity Rating*</h1>
                                     <h4 className='obscureResult'>*based on the popularity of your top 20 artists. Higher is more obscure</h4>
                                 </ FadeInOnScroll>
                             </div>
