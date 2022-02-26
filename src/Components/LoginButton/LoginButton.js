@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 //using enviroment variables
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
-const REDIRECT_URL_AFTER_LOGIN = "http://spotilyser.tk/";
+const REDIRECT_URL_AFTER_LOGIN = "http://spotilyser.ml/";
 // const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/";
 const SCOPE = "user-top-read user-library-read";
 
